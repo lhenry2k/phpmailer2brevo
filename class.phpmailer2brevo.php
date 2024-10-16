@@ -134,12 +134,12 @@ function sendmail_spark($from, $fromName, $toEmail, $toName, $subject, $altBody,
     ));
 
 
-    shell_exec('curl -X POST https://api.brevo.com/v3/smtp/email \
-    -H "Accept: application/json" \
-    -H "Content-Type: application/json" \
-    -H "Api-Key: xkeysib-................." \
-    -H "Host: api.brevo.com" \
-    -d '.$json);
+    shell_exec("curl --request POST \
+     --url https://api.brevo.com/v3/smtp/email \
+     --header 'accept: application/json' \
+     --header 'api-key: xkeysib-........' \
+     --header 'content-type: application/json' \
+     --data '".$json."'");
 
 
 }
